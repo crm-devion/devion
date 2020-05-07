@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contacts</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                    <div class="nav">
+                        <button (click)="addContacts()">Click to import Contacts</button>&nbsp;&nbsp;
+                        <a href="#"><span>Search</span></a>&nbsp;&nbsp;
+                    </div><br>
+                    <hr>
+                <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>PhoneNumber</th>
+                            <th>Company</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let contact of contacts">
+                            <td>{{contact.name}}</td>
+                            <td>{{contact.phoneNo}}</td>
+                            <td>{{contact.company}}</td>
+                            <td>{{contact.location}}</td>
+                        </tr>
+                    </tbody>    
+                </table>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <strong>User Settings</strong><br><br>
+                <hr>
+                <button>Call logs</button>&nbsp;&nbsp;
+                <button>Missed Calls</button><br><br>
+                <button>Dialled Calls</button>&nbsp;&nbsp;
+                <button>Received Calls</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

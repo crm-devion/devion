@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="bg"  class="container" >
+      <div class="row">
+      <div class="col-sm-6">
+        <h1>Welcome to Login page</h1>
+      </div>
+      <div id="log" class="col-sm-6"> 
+        <form action="" [formGroup]="registerForm" (ngSubmit)="submit()"   >
+            <h2>Enter Login Details Here..</h2><br>
+        <div class="form-group">
+          <label for="">Username:</label>&nbsp;
+          <input type="text"  formControlName="userName" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; registerForm.controls.userName.errors }">
+          <div *ngIf="submitted &amp;&amp; registerForm.controls.userName.errors" class="text-danger">
+            <div *ngIf="registerForm.controls.userName.errors.required">UserName is required</div>
+        </div>        
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted &amp;&amp; registerForm.controls.password.errors }"  />
+          <div *ngIf="submitted &amp;&amp; registerForm.controls.password.errors" class="text-danger">
+              <div *ngIf="registerForm.controls.password.errors.required">Password is required</div>
+              <div *ngIf="registerForm.controls.password.errors.minlength">Password must be at least 6 characters</div>
+          </div>
+      </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-outline-success btn-lg"  (click)="submit()">
+        </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+    text-shadow: 2px 2px 5px red;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif\;
+  }
+
+  div.show {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 4px 0;
+  }
+  nav{
+    background-color: purple;
+    padding: 2em 0;
+  }
+  a{
+    float: right;
+    padding-right: 30px;
+    padding-top: 1px;
+    padding-bottom: 5px;
+    color: wheat;
+    font-weight: bold;
+    &:hover{
+      background: darken($color: purple, $amount: 5%);
+  }
+  }
+
+
